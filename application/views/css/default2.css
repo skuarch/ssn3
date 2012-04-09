@@ -8,7 +8,7 @@ body{
 
 .headerTop{
 	background-image: url('../images/bg.png');
-	height:125px;
+	height:150px;
 }
 
 #wrapper{	
@@ -18,7 +18,7 @@ body{
 }
 
 #wrapper div{
-	height:120px;
+	height:145px;
 }
 
 #wrapper .left{

@@ -1,22 +1,17 @@
 .menubar {
 	/*background-color: #191919;*/	
-	background-color: #4489A1;
+	/*background-color: #4489A1;*/
 	background-image: url('../images/bg-menu.png');
 	color: #00C9D4;
 	text-align: center;	
-	font-size:17px;
-	word-spacing: 25px;
+	font-size:16px;
+	word-spacing: 30px;
 	letter-spacing: 4px;
+	width:900px;
 }
 
 .menubarNested {
-	padding-top: 7px;
-	height: 25px;
-	width: 900px;
-	margin: auto;
-	border-left: solid 1px #60d3e8;
-	border-right: solid 1px #60d3e8;
-	
+	padding-top: 3px;	
 }
 
 .menubar a:link {
@@ -36,5 +31,5 @@
 
 .menubar a:hover {
 	text-decoration: none;
-	color: #fff;
+	color: #fff;	
 }

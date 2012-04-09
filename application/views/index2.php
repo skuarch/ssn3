@@ -21,19 +21,21 @@
 				<div class="left"></div>
 				<div class="right"></div>
 				<div class="middle">
+				
 					<div id="container" style="padding-left:35px;position:relative ">
 						<img src="application/views/images/1.jpg" alt="" width="900" height="120" />
 						<img src="application/views/images/2.jpg" alt="" width="900" height="120" />
 						<img src="application/views/images/8.jpg" alt="" width="900" height="120" />
 						<img src="application/views/images/9.jpg" alt="" width="900" height="120" />
 						<img src="application/views/images/10.jpg" alt="" width="900" height="120" />
-					</div>	
+					</div>
+					
+					<?php require_once 'menubar.php';?>
+						
 				</div>
 			</div>				
 				
-		</div>
-		
-		<?php require_once 'menubar.php'; ?>
+		</div>		
 		
 		<div style="width:928px; margin:auto; height:1000px; background-color: #fff">
 		
