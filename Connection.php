@@ -2,55 +2,95 @@
 
 class Connection {
     
-        private $errorHandler;
+        private $username;
+        private $password;
+        private $server;
+        private $database;
+        private $link;
     
 	//======================================================================
-	function __contruct($errorHandler){
-            $this->errorHandler = $errorHandler;
-            set_error_handler("errorHandler");                      
-	} // end __contruct
+        /**
+         * create a instance.
+         * @param username name of user
+         * @param password password for access to database
+         * @param server ip or host of database server
+         * @param database name of database
+         */
+	public function __construct($username, $password, $server, $database){            
+            
+            $this->username = $username;
+            $this->password = $password;
+            $this->server = $server;
+            $this->database = $database;
+            
+            //set_error_handler("errorHandler");
+            
+	} // end __contruct           
         
         //======================================================================
-        private function errorHandler($errno, $errstr, $errfile, $errline){
-            $this->errorHandler->handler($errno, $errstr, $errfile, $errline);            
-        } // end errorHandler        
+        private function errorHandler($errno, $errstr, $errfile, $errline){            
+            $e = new ErrorHandler();
+            $e->handler($errno, $errstr, $errfile, $errline);
+        } // end errorHandler
 
 	//======================================================================
 	/**
-         * get the connection to database.
-         * @param server ip or hostname
-         * @param user name
-         * @param password         
-         * @return $link
+         * get the connection to database.         
+         * @return $link connection to database.
          */
-	function getConnection( $server, $username, $password){
+	private function getConnection(){
             
-            $link = mysql_connect($server, $username, $password);
+            $this->link = mysql_connect($this->server, $this->username, $this->password) or die (mysql_error());            
+            return $this->link;
             
-            return $link;
-            
-	} // end getConnection
-        
+	} // end getConnection        
         
         //======================================================================
         /**
          * select database
-         * @param database name
          */
-        function selectDataBase($database){            
-            mysql_select_db($database);
-        } // end selectDataBase
-
-	//======================================================================
-        /**
-         * close the connection safety.
-         * @param $link 
-         */
-	function closeConnection($link){
-            if($link != null){                
-                mysql_close($link);
+        private function selectDataBase(){            
+            mysql_select_db($this->database);
+        } // end selectDataBase	
+        
+        //======================================================================
+        private function closeConnection(){
+            if($this->link != null){                
+                mysql_close($this->link);
             }
+            $this->link = null;
 	} // end closeConnection
+        
+        //======================================================================
+        /**
+         * execute any sql statement.
+         * @param $sql query
+         * @return $array array with results 
+         */
+        public function executeQuery($sql){            
+            
+            $array = null;
+            $this->getConnection();     
+            $this->selectDataBase();
+            $result = mysql_query($sql, $this->link);            
+            while($tmp = mysql_fetch_array($result)){
+                $array[] = $tmp;                
+            }           
+            
+            $this->closeConnection();
+            
+            return $array;
+        } // end executeQuery
+        
+        //======================================================================
+        public function executeUpdate($sql){
+            
+            $this->getConnection();     
+            $this->selectDataBase();
+            mysql_query($sql);
+            $this->closeConnection();
+            
+        }
 
 } // end class
 

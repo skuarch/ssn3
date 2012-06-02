@@ -70,6 +70,13 @@ body{
 	text-align:center;
 }
 
+.lastStation{
+    background-image: url('../images/bg1.png');   
+    height:35px;
+    color: #fff;
+    padding-top: 15px;    
+}
+
 .menu{
 	z-index: 1; 
 	background-image: url('../images/transparent1.png');
@@ -135,6 +142,17 @@ body{
 	float:left;
 	width:313px;	
 	padding-left:13px;
+}
+
+.warning{
+    
+    background-color: #FFFEB9;
+    border: 1px solid #EDEA00;
+    text-align: center;
+    padding:5px;    
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    font-size: 12px;
 }
 
 .wrapper{

@@ -4,16 +4,18 @@ $(document).ready(function(){
         alert("proximamente tendremos una version para mobiles");
     }
 
-    //corners
+    //corners *****
     $("#header").corner("top");	
     $("#footer").corner("bottom");
     $("#menu").corner();
     $("#menu-item").corner();
     $("#stationDay").corner("top");
+    $("#lastStation").corner("top");
+    $("#warning").corner();
 
     // $("#footer").dropShadow({left: 1, top: 1, blur: 1, color: "#000"});
 
-    //tabs
+    //tabs *******
     $("#tabs li").click(function() {
         //	First remove class "active" from currently active tab
         $("#tabs li").removeClass('active');
