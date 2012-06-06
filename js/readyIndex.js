@@ -5,13 +5,15 @@ $(document).ready(function(){
     }
 
     //corners *****
+    $(".title-box").corner("top");
     $("#header").corner("top");	
     $("#footer").corner("bottom");
     $("#menu").corner();
     $("#menu-item").corner();
     $("#stationDay").corner("top");
     $("#lastStation").corner("top");
-    $("#warning").corner();
+    $("#warning").corner();   
+    
 
     // $("#footer").dropShadow({left: 1, top: 1, blur: 1, color: "#000"});
 
@@ -46,5 +48,7 @@ $(document).ready(function(){
         js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+    player('play', '', true);
 
 });

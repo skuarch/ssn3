@@ -3,7 +3,7 @@
     require_once 'EscuchaRadioConnection.php'; 
     
     $connection = new EscuchaRadioConnection();
-    $result = $connection->executeQuery("select * from stations order by station_id desc limit 10");  
+    $result = $connection->executeQry("select * from stations order by station_id desc limit 10");  
     
 ?>
 
@@ -17,7 +17,7 @@
                                             <?php 
                                         
                                             foreach($result as $rs){
-                                                echo $rs['station_name'];
+                                                echo "<a href=\"javascript: setPlayerBox('mainPlayer','".$rs['station_streaming']."', true,'".$rs['station_name']."' );\">".$rs['station_name']."</a>";
                                                 echo "<br/>";                                                
                                             }
                                         

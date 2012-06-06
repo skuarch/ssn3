@@ -3,7 +3,7 @@ p {
 	padding: 0;
 }
 #tabs_wrapper {
-	width: 642px;
+	width: 950px;
 }
 #tabs_container {
 	border-bottom: 1px solid #ccc;
@@ -58,10 +58,10 @@ p {
 #tabs_content_container {
 	border: 1px solid #ccc;
 	border-top: none;
-	padding: 10px;
-	width: 620px;
+	padding: 8px;
+	width: 933px;
 }
 .tab_content {
 	display: none;
-	height:205px;
+	height:405px;
 }

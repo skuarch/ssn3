@@ -70,9 +70,10 @@ class Connection {
         public function executeQuery($sql){            
             
             $array = null;
-            $this->getConnection();     
+            $this->getConnection();                 
             $this->selectDataBase();
-            $result = mysql_query($sql, $this->link);            
+            $result = mysql_query($sql, $this->link) or die (mysql_error());           
+            
             while($tmp = mysql_fetch_array($result)){
                 $array[] = $tmp;                
             }           

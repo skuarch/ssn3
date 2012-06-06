@@ -1,3 +1,11 @@
+<?php 
+
+    require_once 'EscuchaRadioConnection.php';
+    $connection = new EscuchaRadioConnection();
+    $result = $connection->executeQry("select * from stations order by station_id desc");
+
+?>
+
 <div id="tabs_wrapper"> <!-- tabs_wrapper -->
     <div id="tabs_container">
         <ul id="tabs">
@@ -9,7 +17,9 @@
 </div> <!-- / tabs_wrapper -->
 <div id="tabs_content_container"> <!-- tabs_content_container -->
     <div id="tab1" class="tab_content" style="display: block;">
-        <p>consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
+        <div style="overflow: auto; height: 400px;">
+            <?php require_once 'allStations.php'; ?>
+        </div>
     </div>
     <div id="tab2" class="tab_content">
         <p>This tab has icon in it.</p>

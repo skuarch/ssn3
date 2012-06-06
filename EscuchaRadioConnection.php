@@ -22,11 +22,11 @@ class EscuchaRadioConnection {
     } // end __contruct
 
     //==========================================================================
-    function executeQuery($sql){
+    function executeQry($sql){
         
         return $this->connection->executeQuery($sql);         
         
-    } // end executeQuery
+    } // end executeQry
     
     //==========================================================================
     function executeUpdate($sql){        
