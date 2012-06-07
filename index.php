@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+    <head>        
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <script src="js/jquery-1.7.1.js" ></script>	
 	<script src="js/jquery.corner-2.12.js" ></script>	
@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="css/tabs.css" type="text/css" />
         <link rel="stylesheet" href="css/allStations.css" type="text/css" />
        
-        <title>escucharadio</title>
-        
+        <title>escucharadio</title>        
+
     </head>
     <body>
         
